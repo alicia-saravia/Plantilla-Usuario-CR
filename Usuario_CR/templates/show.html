@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex flex-row justify-content-end mx-5"> 
+        <a href="/users"> Inicio</a>
+    </div>
+    
+    <div class="d-flex flex-column align-items-center">
+        <h1 class="titulo">User {{usuario['id']}}</h1>
+        <div class="d-flex align-items-left border border-2 border-dark w-25">
+            <ul class="list-unstyled">
+                <li>Nombre Completo: {{usuario['nombre']}} {{usuario['apellido']}}</li>
+                <li>Email: {{usuario['email']}}</li>
+                <li>Creado en: {{usuario['creado_en']}}</li>
+                <li>Actualizado en: {{usuario['actualizado_en']}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="/users/{{usuario['id']}}/edit">Editar</a> | <a href="/delete/{{usuario['id']}}">Borrar</a>
+</div>
+</body>
+</html>
